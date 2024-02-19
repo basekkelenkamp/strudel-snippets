@@ -1,0 +1,19 @@
+
+
+let scale = "<C:minor F:minor>/4"
+
+stack(
+  n("<0@2 <[3 4] [5 6]>*4 5@2>").scale(scale).midi(1),
+
+  n("<3!4 6!6>/2").add("<0 3>").segment(16).scale(scale)
+  .s("sawtooth, sine").gain(0.1).room(1.2).vib(0.05).delay(0.7),
+
+  n(saw.range(-0, 24).segment(12)).scale(scale)
+  .midichan("<6 5 4>/3").midi(0),
+
+  // n("<0*6>*2").scale(scale).midichan(2).midi(0),
+
+  n("2 ~!2 9@2").scale(scale).midichan(1).midi(0)
+  
+)
+  // .segment("<3 10 12>/2")
